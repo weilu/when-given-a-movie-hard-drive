@@ -1,20 +1,20 @@
 development:
   adapter: postgresql
-  username: pivotal
+  username: wei
   database: movie_hard_drive_development
   password:
   host: localhost
 
 test:
   adapter: postgresql
-  username: pivotal
+  username: wei
   database: movie_hard_drive_test
   password:
   host: localhost
 
 production:
   adapter: postgresql
-  username: pivotal
+  username: wei
   database: movie_hard_drive_production
   password:
   host: localhost

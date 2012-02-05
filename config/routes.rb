@@ -2,8 +2,11 @@ WhenGivenAMovieHardDrive::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
+  resources :movies
+  match 'movies/home' => 'movies#home'
+  match 'movies/search' => 'movies#search'
+
+  resources :movie_searches
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
@@ -48,7 +51,7 @@ WhenGivenAMovieHardDrive::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'movies#home'
 
   # See how all your routes lay out with "rake routes"
 

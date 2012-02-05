@@ -1,0 +1,12 @@
+%table{id: 'movies', class: 'datatable'}
+  %thead
+    %tr
+      %th Title
+      %th Year
+      %th Rating
+  %tbody
+    -@movies.each do |movie|
+      %tr
+        %td= movie.name
+        %td= movie.year
+        %td= movie.rating

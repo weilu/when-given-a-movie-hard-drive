@@ -32,4 +32,7 @@ group :test, :development do
 
   gem 'vcr'
   gem 'fakeweb'
+
+  gem 'fixture_builder'
+
 end

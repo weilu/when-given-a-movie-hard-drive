@@ -7,6 +7,8 @@ WhenGivenAMovieHardDrive::Application.routes.draw do
   match 'movies/search' => 'movies#search'
 
   resources :movie_searches
+  match 'movie_searches/:id/find_trailers' => 'movie_searches#find_trailers', :as => :find_trailers
+
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

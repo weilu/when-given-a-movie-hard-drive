@@ -17,6 +17,10 @@ end
 
 gem 'jquery-rails'
 
+group :development do
+  gem 'heroku'
+end
+
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 

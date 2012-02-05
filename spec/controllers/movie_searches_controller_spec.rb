@@ -11,9 +11,24 @@ describe MovieSearchesController do
 
     it { assigns(:movies).should == MovieSearch.last.movies }
 
-    it 'displays the movies found in a table' do
-      response.body.should have_css("table")
+    describe 'response body' do
+      subject { response.body }
+
+      it { should have_css("table") }
+      it { should have_css("form input[type='submit']") }
     end
-    
+
+  end
+
+  describe 'POST find_trailers' do
+    let(:request) { post :find_trailers, id: MovieSearch.last.id }
+
+    before do
+      VCR.use_cassette('youtube') do
+        request
+      end
+    end
+
+    it { assigns(:client).should_not be_nil }
   end
 end

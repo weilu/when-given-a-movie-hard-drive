@@ -17,7 +17,7 @@ describe MoviesController do
   describe 'POST search' do
     let(:params) { {movie_list: "Crash\nPulp Fiction\nFinding Neverland\nShakespeare in Love [1998]"} }
     let(:request) do
-      VCR.use_cassette('synopsis') do
+      VCR.use_cassette('imdb') do
         post :search, params
       end
     end

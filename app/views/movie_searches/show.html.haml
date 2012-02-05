@@ -10,3 +10,6 @@
         %td= movie.name
         %td= movie.year
         %td= movie.rating
+
+=form_tag url_for(controller: :movie_searches, action: :find_trailers) do
+  =submit_tag 'find trailers on youtube'

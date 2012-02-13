@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
       rescue Exception => e
         #f.write e.message
         #f.write e.backtrace.inspect
-        logger.error e.backtrace.inspec
+        logger.error e.backtrace.inspect
       end
     end
 

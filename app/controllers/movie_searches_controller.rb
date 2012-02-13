@@ -10,6 +10,7 @@ class MovieSearchesController < ApplicationController
                                    dev_key: YoutubeApiConfig::DEV_KEY)
 
     playlist = create_youtube_playlist
+    @playlist_id = playlist.playlist_id
 
     movies = MovieSearch.find(params[:id]).movies
     movies.each do |movie|
@@ -17,7 +18,7 @@ class MovieSearchesController < ApplicationController
       add_trailer_to_playlist playlist, trailer
     end
 
-    render text: "http://www.youtube.com/p/#{playlist.playlist_id}?fs=1"
+    render 'play'
   end
 
   private
@@ -33,6 +34,6 @@ class MovieSearchesController < ApplicationController
   end
 
   def add_trailer_to_playlist playlist, video
-    @client.add_video_to_playlist(playlist.playlist_id, video.video_id)
+    @client.add_video_to_playlist(@playlist_id, video.video_id)
   end
 end

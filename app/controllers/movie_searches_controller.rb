@@ -24,7 +24,8 @@ class MovieSearchesController < ApplicationController
   private
   
   def create_youtube_playlist
-    @client.add_playlist(title: YoutubeApiConfig::PLAYLIST_TITLE, descriptoin: "")
+    playlist_title = "Movies I would potentially watch #{Time.now.to_i}"
+    @client.add_playlist(title: playlist_title, descriptoin: "")
   end
 
   def search_youtube_for_trailer movie

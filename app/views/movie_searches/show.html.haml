@@ -1,4 +1,4 @@
-%table{id: 'movies', class: 'datatable'}
+%table{id: 'movies', class: 'table table-bordered table-striped'}
   %thead
     %tr
       %th Title
@@ -12,4 +12,4 @@
         %td= movie.rating
 
 =form_tag url_for(controller: :movie_searches, action: :find_trailers) do
-  =submit_tag 'find trailers on youtube'
+  =submit_tag 'find trailers on youtube', class: 'btn'

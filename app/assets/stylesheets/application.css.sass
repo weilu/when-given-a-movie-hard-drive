@@ -7,6 +7,7 @@ $grey: lighten(black, 30%)
 
 h3
   color: $grey
+  display: inline-block
 
 header
   position: fixed
@@ -22,6 +23,13 @@ header
   @include border-bottom-right-radius(20px)
   @include border-bottom-left-radius(20px)
   @include box-shadow(0 0 5px 3px hsla(0, 0%, 0%, 0.5))
+
+  a
+    color: $grey
+
+    &:hover
+      color: $grey
+      text-decoration: none
 
 body
   margin-top: 90px

@@ -42,5 +42,6 @@ group :test, :development do
   gem 'fakeweb'
 
   gem 'fixture_builder'
-
+  gem 'factory_girl_rails'
+  gem 'faker'
 end

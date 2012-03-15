@@ -11,5 +11,24 @@
         %td= movie.year
         %td= movie.rating
 
-=form_tag url_for(controller: :movie_searches, action: :find_trailers) do
+=form_tag({controller: :movie_searches, action: :show}, method: "get") do
+  %fieldset
+    %span{ class: 'label' } Year
+    %br
+    %label{ for: 'year_before' } Before
+    =text_field_tag 'year_before', @year_before
+    %label{ for: 'year_after' } After
+    =text_field_tag 'year_after', @year_after
+  %fieldset
+    %span{ class: 'label' } Rating
+    %br
+    %label{ for: 'rating_lower_than' } Lower than
+    =text_field_tag 'rating_lower_than', @rating_lower_than
+    %label{ for: 'rating_higher_than' } Higher than
+    =text_field_tag 'rating_higher_than', @rating_higher_than
+    =submit_tag 'filter', class: 'btn'
+
+
+=form_tag({controller: :movie_searches, action: :find_trailers}) do
+  =hidden_field_tag 'movies', slice_movie_name_and_year(@movies).to_json
   =submit_tag 'find trailers on youtube', class: 'btn'
